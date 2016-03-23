@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/labnew.unity
+  isLoaded: 1
+  isActive: 1
