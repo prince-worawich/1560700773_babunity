@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 	public GameObject hazard;
@@ -7,11 +8,48 @@ public class GameController : MonoBehaviour {
 	public float spawnWaite;
 	public float waveWaite;
 	public float startWaite;
-	public Vector3 spawnValues;	// Use this for initialization
+	public Vector3 spawnValues;
+	public Text gameOverText;
+	public Text restartText;
+
+	private bool gameOver;
+	private bool restart;
+
 	void Start () {
+		gameOver = false;
+		restart = false;
+
+		gameOverText.text = "";
+		restartText.text = "";
+
 		StartCoroutine(SpawnWaves());
+		gameOver = true;
 
 	}
+	void GameOver()
+	{
+		gameOverText.text = "Game Over";
+	}
+
+	void Update()
+	{
+		
+			if (gameOver)
+			{
+				restart = true;
+				restartText.text = "Press 'R' for Restart !";
+			}
+
+			if (restart)
+			{
+				if (Input.GetKeyDown (KeyCode.R)) 
+				{
+					Application.LoadLevel (Application.loadedLevel);
+				}
+			}
+		}
+			
+
 
 	IEnumerator SpawnWaves()
 	{
