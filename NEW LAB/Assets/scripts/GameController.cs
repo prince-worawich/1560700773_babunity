@@ -23,12 +23,13 @@ public class GameController : MonoBehaviour {
 		restartText.text = "";
 
 		StartCoroutine(SpawnWaves());
-		gameOver = true;
+
 
 	}
-	void GameOver()
+	public void GameOver()
 	{
 		gameOverText.text = "Game Over";
+		gameOver = true;
 	}
 
 	void Update()
