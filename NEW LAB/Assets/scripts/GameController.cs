@@ -9,8 +9,13 @@ public class GameController : MonoBehaviour {
 	public float waveWaite;
 	public float startWaite;
 	public Vector3 spawnValues;
+
+
 	public Text gameOverText;
 	public Text restartText;
+	public Text Scoretext;
+
+	private int score;  
 
 	private bool gameOver;
 	private bool restart;
@@ -22,10 +27,25 @@ public class GameController : MonoBehaviour {
 		gameOverText.text = "";
 		restartText.text = "";
 
+		score = 0;
+		UpdateScore ();
+
 		StartCoroutine(SpawnWaves());
 
 
+
+
 	}
+
+	public void AddScore(int newScoreValus){
+		score += newScoreValus;
+		UpdateScore ();
+	}
+	void UpdateScore()
+	{
+		Scoretext.text = "Score:" + score.ToString();
+	}
+
 	public void GameOver()
 	{
 		gameOverText.text = "Game Over";
