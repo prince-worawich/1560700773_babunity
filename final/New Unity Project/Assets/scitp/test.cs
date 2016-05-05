@@ -2,7 +2,14 @@
 using System.Collections;
 
 public class test : MonoBehaviour {
-public void OnMouseDown() {
-		Application.LoadLevel(1);
+ void update() {
+
 	}
+	public void Playagain(){
+		Application.LoadLevel (0);
+	}
+	public void Play(){
+		Application.LoadLevel (1);
+	}
+
 }
