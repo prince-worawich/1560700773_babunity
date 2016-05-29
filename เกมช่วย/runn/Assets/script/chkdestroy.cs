@@ -21,9 +21,9 @@ public class chkdestroy : MonoBehaviour {
 		}
 
 	}
-	void OnCollisionEnter2D(Collision2D c){
-		if (c.gameObject.tag == "wall") {
-			Destroy(gameObject);
-		}
-	}
+//	void OnCollisionEnter2D(Collision2D c){
+//		if (c.gameObject.tag == "wall") {
+//			Destroy(gameObject);
+//		}
+//	}
 }
